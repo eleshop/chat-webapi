@@ -5,6 +5,8 @@ namespace Chat.Services.Interfaces.Messages;
 
 public interface IMessageService
 {
+    public Task<IList<Message>> GetByIdMessages(long userOneId, long userTwoId);
+
     public Task<IList<Message>> GetAllAsync();
 
     public Task<int> CreateAsync(MessageCreateDto entity);

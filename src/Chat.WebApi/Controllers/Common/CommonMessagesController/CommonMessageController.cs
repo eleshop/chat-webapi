@@ -19,6 +19,10 @@ public class CommonMessageController : ControllerBase
     public async Task<IActionResult> GetAllAsync()
       => Ok(await _service.GetAllAsync());
 
+    [HttpGet("usersId")]
+    public async Task<IActionResult> GetByIdMessages(long useroneid, long usertwoid)
+      => Ok(await _service.GetByIdMessages(useroneid, usertwoid));
+
     [HttpGet("{messageId}")]
     public async Task<IActionResult> GetByIdAsync(long messageId)
     => Ok(await _service.GetByIdAsync(messageId));

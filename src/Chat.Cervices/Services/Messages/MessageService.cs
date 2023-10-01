@@ -62,6 +62,12 @@ public class MessageService : IMessageService
         else return message;
     }
 
+    public async Task<IList<Message>> GetByIdMessages(long userOneId, long userTwoId)
+    {
+        var message = await _repository.GetByIdMessages(userOneId, userTwoId);
+        return message;
+    }
+
     public async Task<int> UpdateAsync(long id, MessageUpdateDto entity)
     {
         var message = await _repository.GetByIdAsync(id);
